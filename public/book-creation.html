@@ -1,0 +1,35 @@
+<div class="row" ng-hide="book._id">
+  <div class="col-sm-6">
+      <h2>Create new book</h2>
+  </div>
+</div>
+<form ng-submit="saveBook(book)" name="form">
+  <div class="row">
+    <p class="col-xs-12 col-sm-5">
+      <label>Book Title
+      <input class="form-control" type="text" ng-model="book.bookTitle" required></label>
+      <span ng-show="form.book.bookTitle.$touched && form.book.bookTitle.$invalid">Book title is required.</span>
+    </p>
+    <p class="col-xs-12 col-sm-offset-1 col-sm-5">
+      <label>Authors Name
+      <input class="form-control" type="text" ng-model="book.authorsName" required></label>
+      <span ng-show="form.book.authorsName.$touched && form.book.authorsName.$invalid">Book author is required.</span>
+    </p>
+  </div>
+  <div class="row">
+    <p class="col-xs-12 col-sm-5">
+      <label>Year
+      <input class="form-control" type="number" max="2017" ng-model="book.year"></label>
+    </p>
+    <p class="col-xs-12 col-sm-offset-1 col-sm-5">
+      <label>Genre
+      <input class="form-control" type="text" ng-model="book.genre"></label>
+    </p>
+  </div>
+  <div class="row">
+    <p class="col-sm-12">
+      <input class="btn btn-default" type="submit" value="Save">
+      <button class="btn btn-default" ng-click="back()">Back</button>
+    </p>
+  </div>
+</form>

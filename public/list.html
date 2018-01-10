@@ -1,0 +1,26 @@
+<div class = "row">
+  <div class="col-sm-6">
+    <h2>
+      Books
+    </h2>
+  </div>
+  <div class="col-sm-offset-4 col-sm-2">
+    <a class="btn btn-default new" href="#/new/book">New book</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10">
+    <table class="table table-hover">
+      <tbody>
+      <tr ng-repeat="book in books | orderBy:'lastName'" style="cursor:pointer">
+        <td>
+          <a ng-href="#/book/{{book._id}}">{{ book.bookTitle }}</a>
+        </td>
+        <td>
+          {{ book.authorsName }}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
